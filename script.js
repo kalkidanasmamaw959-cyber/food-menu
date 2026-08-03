@@ -26,7 +26,7 @@ addButtons.forEach(function (btn) {
     const price = parseFloat(btn.getAttribute("data-price"));
 
     addToOrder(name, price);
-    showNotification(); // Feature: "Item Added Successfully" notice
+    showNotification(); //  "Item Added Successfully" notice
   });
 });
 
@@ -45,7 +45,7 @@ function addToOrder(name, price) {
   renderOrder();
 }
 
-// Feature: increase quantity button
+//  increase quantity button
 function increaseQty(name) {
   const item = order.find(function (i) {
     return i.name === name;
@@ -57,7 +57,7 @@ function increaseQty(name) {
   }
 }
 
-// Feature: decrease quantity button (removes item once it hits 0)
+//  decrease quantity button (removes item once it hits 0)
 function decreaseQty(name) {
   const item = order.find(function (i) {
     return i.name === name;
@@ -73,7 +73,7 @@ function decreaseQty(name) {
   }
 }
 
-// Feature: remove one item completely from the order
+//  remove one item completely from the order
 function removeItem(name) {
   order = order.filter(function (i) {
     return i.name !== name;
@@ -121,7 +121,7 @@ clearOrderBtn.addEventListener("click", function () {
   renderOrder();
 });
 
-// Feature: show "Item Added Successfully" for a short moment
+//  show "Item Added Successfully" for a short moment
 function showNotification() {
   notification.classList.add("show");
   setTimeout(function () {
@@ -129,7 +129,7 @@ function showNotification() {
   }, 1500);
 }
 
-// Feature: show the current date and time, and keep it updating
+//  show the current date and time, and keep it updating
 function updateClock() {
   const now = new Date();
   clockEl.textContent = now.toLocaleDateString() + " " + now.toLocaleTimeString();
@@ -137,7 +137,7 @@ function updateClock() {
 updateClock();
 setInterval(updateClock, 1000);
 
-// Feature: clicking the cart icon shows/hides the Order Summary
+//  clicking the cart icon shows/hides the Order Summary
 cartIcon.addEventListener("click", function () {
   orderSummary.classList.toggle("hidden");
 
@@ -147,7 +147,7 @@ cartIcon.addEventListener("click", function () {
   }
 });
 
-// Feature: header becomes fixed and changes color after scrolling down
+//  header becomes fixed and changes color after scrolling down
 window.addEventListener("scroll", function () {
   if (window.scrollY > 80) {
     siteHeader.classList.add("sticky");
